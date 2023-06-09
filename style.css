@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  position: relative;
   font-family: "Hind", sans-serif;
   font-size: 15px;
   line-height: 1.6;
@@ -94,7 +95,7 @@ p {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 1;
 }
 
 .header-inner {
@@ -164,13 +165,7 @@ img {
 }
 
 /* Button */
-.btn {
-  display: inline-block;
-  vertical-align: top;
-  padding: 15px 30px;
-
-  border: 1px solid #fff;
-
+button a {
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
@@ -178,11 +173,6 @@ img {
   text-decoration: none;
 
   transition: background 0.1s linear, color 0.1s linear;
-}
-
-.btn:hover {
-  background-color: #fff;
-  color: #333;
 }
 
 /* Services */
@@ -534,4 +524,53 @@ button:hover {
 
 .footer-href:hover {
   color: red;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+
+  background-color: white;
+  padding: 3.5rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.hidden {
+  display: none;
+}
+
+.close-modal {
+  position: absolute;
+  top: -0.5rem;
+  right: 1rem;
+  font-size: 4rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 10px;
+}
+
+.modal button:hover {
+  background-color: transparent;
+  color: inherit;
+  border-color: transparent;
+  border-width: 0;
 }
